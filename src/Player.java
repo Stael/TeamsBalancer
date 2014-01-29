@@ -1,3 +1,7 @@
+/**
+ * Player class
+ * Simply materialize a player and associate him to a score
+ */
 public class Player implements Comparable<Player> {
     private int score;
 
