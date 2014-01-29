@@ -10,8 +10,8 @@ public class BalancerTester {
 
         long finalTime = System.currentTimeMillis();
 
-        System.out.println(teams[0].toString());
-        System.out.println(teams[1].toString());
+        System.out.println("Team 1 --> " + teams[0].toString());
+        System.out.println("Team 1 --> " + teams[1].toString());
         System.out.println("Difference : " + Math.abs(teams[0].getScore() - teams[1].getScore()));
         System.out.println("Exec Time : " + (finalTime - initialTime) + " ms \n");
     }
