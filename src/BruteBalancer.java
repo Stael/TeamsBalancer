@@ -2,9 +2,10 @@ public class BruteBalancer implements Balancer {
 
     @Override
     public Team[] balance(Player[] players) {
+        int playersByTeam = players.length / 2;
 
-        Team team1 = new Team(players.length/2);
-        Team team2 = new Team(players.length/2);
+        Team team1 = new Team(playersByTeam);
+        Team team2 = new Team(playersByTeam);
 
         Team t1;
         Team t2;
@@ -19,9 +20,9 @@ public class BruteBalancer implements Balancer {
 
         BinaryWord binaryWord = new BinaryWord(players.length);
         do {
-            if(binaryWord.bitsAtTrue() == players.length/2) {
-                t1 = new Team(players.length/2);
-                t2 = new Team(players.length/2);
+            if(binaryWord.bitsAtTrue() == playersByTeam) {
+                t1 = new Team(playersByTeam);
+                t2 = new Team(playersByTeam);
 
                 playersInT1 = 0;
                 playersInT2 = 0;
@@ -46,7 +47,6 @@ public class BruteBalancer implements Balancer {
             binaryWord.add(1);
         }
         while(binaryWord.toInteger() < Math.pow(2, players.length));
-
 
         return new Team[] {team1, team2};
     }
