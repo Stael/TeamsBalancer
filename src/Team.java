@@ -23,12 +23,12 @@ public class Team implements Comparable<Team> {
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-
+        /*
         for(Player player : players) {
             stringBuilder.append(player.getScore());
             stringBuilder.append('\n');
         }
-
+        */
         stringBuilder.append("Total : ");
         stringBuilder.append(score());
         return stringBuilder.toString();
